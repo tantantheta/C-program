@@ -2,338 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learning C Programming</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Programming Topics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      margin: 0;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 20px;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 10px;
+    }
+    .sidebar ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+    .main-content {
+      margin-left: 270px;
+      padding: 20px;
+      max-width: 900px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Learning C programming</h1>
-  </header>
-
-  <main>
-         <div class="sidebar">
-  <h2>C Topics</h2>
-  <ul>
-    <li><a href="#preprocessor">Preprocessor</a></li>
-    <li><a href="#tokens">Tokens</a></li>
-    <li><a href="#formattedio">Formatted I/O</a></li>
-    <li><a href="#controlflow">Control Flow</a></li>
-    <li><a href="#loops">Loops</a></li>
-    <li><a href="#arrays">Arrays</a></li>
-    <li><a href="#patterns">Pattern Printing</a></li>
-    <li><a href="#strings">Strings</a></li>
-    <li><a href="#functions">Functions</a></li>
-    <li><a href="#recursion">Recursion</a></li>
-  </ul>
-</div>
-
+  <div class="sidebar">
+    <h2>C Topics</h2>
+    <ul>
+      <li><a href="#preprocessor">Preprocessor</a></li>
+      <li><a href="#tokens">Tokens</a></li>
+      <li><a href="#formattedio">Formatted I/O</a></li>
+      <li><a href="#controlflow">Control Flow</a></li>
+      <li><a href="#loops">Loops</a></li>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#patterns">Pattern Printing</a></li>
+      <li><a href="#strings">Strings</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#recursion">Recursion</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <section class="content" id="preprocessor">
+      <h2>Preprocessor Directives</h2>
+      <p>Preprocessor directives begin with <code>#</code> and are processed before compilation.</p>
  
+     <img src="program 1.jpg" alt="Preprocessor illustration">
+ <img src="output 1.jpg" alt="Preprocessor illustration">
+    </section>
 
-   <section class="content" id="preprocessor">
-  <h2>Preprocessor Directives</h2>
-  <p>
-    Preprocessor directives begin with <code>#</code> and are processed before compilation. 
-    Common ones include <code>#include</code> for including libraries and <code>#define</code> for constants or macros.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Using #define
-#include &lt;stdio.h&gt;
-#define PI 3.14
+    <section class="content" id="tokens">
+      <h2>Tokens in C</h2>
+      <p>Tokens are the smallest building blocks in a C program: keywords, identifiers, constants, operators, etc.</p>
+           <img src="program 2.jpg" alt="Tokens example">
+  <img src="output 2.jpg" alt="Tokens example">
+    </section>
 
-int main() {
-    float radius = 5.0;
-    float area = PI * radius * radius;
-    printf("Area: %.2f\n", area);
-    return 0;
-}
-  </code></pre>
-  <img src="preprocessor.png" alt="Preprocessor illustration" style="max-width: 100%; margin-top: 10px;">
-</section>
+    <section class="content" id="formattedio">
+      <h2>Formatted I/O</h2>
+      <p>Formatted input and output are done using <code>scanf()</code> and <code>printf()</code>.</p>
+         
+      <img src="program 3.jpg" alt="Formatted I/O example">
+      <img src="output 3.jpg" alt="Formatted I/O example">
+    </section>
 
-<section class="content">
-  <h2>Loops in C</h2>
-  <p>Loops allow repeated execution of code blocks. C supports <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Print numbers 1 to 5 using for loop
-#include &lt;stdio.h&gt;
+    <section class="content" id="controlflow">
+      <h2>Control Flow</h2>
+      <p>Control flow includes decisions and branches using <code>if</code>, <code>else</code>, and <code>switch</code>.</p>
+      <img src="program 4.jpg" alt="Control flow">
 
-int main() {
-    for (int i = 1; i <= 5; i++) {
-        printf("%d\n", i);
-    }
-    return 0;
-}
-  </code></pre>
-</section>
-<section class="content">
-  <h2>Formatted I/O Functions</h2>
-  <p>Formatted input/output functions like <code>scanf</code> and <code>printf</code> allow you to take user input and display output with format specifiers.</p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Formatted I/O
-#include &lt;stdio.h&gt;
+      <img src="output 4.jpg" alt="Control flow">
 
-int main() {
-    int age;
-    float height;
-    printf("Enter your age and height: ");
-    scanf("%d %f", &amp;age, &amp;height);
-    printf("Age: %d, Height: %.2f\n", age, height);
-    return 0;
-}
-  </code></pre>
-</section>
-<section class="content">
-  <h2>Control Flow</h2>
-  <p>Control flow in C determines the order in which statements are executed. It includes if-else, loops, and switch-case structures.</p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Simple if-else example
-#include &lt;stdio.h&gt;
+    </section>
 
-int main() {
-    int num = 10;
-    if (num &gt; 0)
-        printf("Positive number\n");
-    else
-        printf("Non-positive number\n");
-    return 0;
-}
-  </code></pre>
-</section>
-<section class="content">
-  <h2>Pattern Printing</h2>
-  <p>Patterns are printed using nested loops. Common examples include triangles, squares, and pyramids of characters or numbers.</p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Right-angled triangle pattern
-#include &lt;stdio.h&gt;
+    <section class="content" id="loops">
+      <h2>Loops</h2>
+      <p>Loops are used to repeat actions: <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
+      <img src="program 5.jpg" alt="Looping example">
+<img src="output 5.jpg" alt="Looping example">
+    </section>
 
-int main() {
-    for (int i = 1; i &lt;= 5; i++) {
-        for (int j = 1; j &lt;= i; j++) {
-            printf("* ");
-        }
-        printf("\n");
-    }
-    return 0;
-}
-  </code></pre>
-</section>
-<section class="content">
-  <h2>String Handling Functions</h2>
-  <p>C provides functions like <code>strlen</code>, <code>strcpy</code>, and <code>strcmp</code> to handle strings.</p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Using strlen and strcpy
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+    <section class="content" id="arrays">
+      <h2>Arrays</h2>
+      <p>Arrays store multiple values of the same type in a single variable using index positions.</p>
+      
+       <img src="program 6.jpg" alt="Looping example">
+<img src="output 6.jpg" alt="Looping example">
+    </section>
 
-int main() {
-    char str1[] = "Hello";
-    char str2[20];
-    strcpy(str2, str1);
-    printf("Copied string: %s\n", str2);
-    printf("Length: %lu\n", strlen(str2));
-    return 0;
-}
-  </code></pre>
-</section>
-<section class="content" id="tokens">
-  <h2>Tokens in C</h2>
-  <p>
-    Tokens are the smallest elements in a C program. These include:
-    keywords, identifiers, constants, operators, and special symbols.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Example: Tokens
-#include &lt;stdio.h&gt;
+    <section class="content" id="patterns">
+      <h2>Pattern Printing</h2>
+      <p>Patterns are printed using nested loops — often used in logic building.</p>
+         <img src="program 7.jpg" alt="pattern triangle">
+<img src="output 7.jpg" alt="pattern traingle">
+    </section>
 
-int main() {
-    int a = 10, b = 5;
-    int sum = a + b;
-    printf("Sum: %d\n", sum);
-    return 0;
-}
-  </code></pre>
-  <img src="tokens.png" alt="Tokens in C" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content" id="formattedio">
-  <h2>Formatted I/O Functions</h2>
-  <p>
-    C provides formatted input/output functions using <code>scanf()</code> and <code>printf()</code>. 
-    Use format specifiers like <code>%d</code>, <code>%f</code>, <code>%c</code> etc. to control how input/output works.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-#include &lt;stdio.h&gt;
+    <section class="content" id="strings">
+      <h2>Strings</h2>
+      <p>Strings are arrays of characters. Functions like <code>strcpy()</code>, <code>strlen()</code> help manipulate them.</p>
+     
+      <img src="program 8.jpg" alt="Strings in C">
 
-int main() {
-    int age;
-    float height;
-    printf("Enter age and height: ");
-    scanf("%d %f", &amp;age, &amp;height);
-    printf("Age: %d, Height: %.2f\n", age, height);
-    return 0;
-}
-  </code></pre>
-  <img src="formatted-io.png" alt="Formatted IO Output" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content" id="controlflow">
-  <h2>Control Flow</h2>
-  <p>
-    C control flow includes <code>if</code>, <code>else</code>, <code>switch</code>, and conditional statements to control the execution of code.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Even or Odd
-#include &lt;stdio.h&gt;
+      <img src="output 8.jpg" alt="Strings in C">
 
-int main() {
-    int num = 6;
-    if (num % 2 == 0)
-        printf("Even\n");
-    else
-        printf("Odd\n");
-    return 0;
-}
-  </code></pre>
-  <img src="control-flow.png" alt="Control Flow Example" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content">
-  <h2>Loops in C</h2>
-  <p>
-    Loops repeat a block of code. C supports <code>for</code>, <code>while</code>, and <code>do-while</code> loops.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Print numbers 1 to 5
-#include &lt;stdio.h&gt;
+    </section>
 
-int main() {
-    for (int i = 1; i &lt;= 5; i++) {
-        printf("%d\n", i);
-    }
-    return 0;
-}
-  </code></pre>
-  <img src="loops.png" alt="Loop Output" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content">
-  <h2>Arrays</h2>
-  <p>
-    Arrays store multiple values of the same type. Access elements using their index (starting from 0).
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Print array elements
-#include &lt;stdio.h&gt;
+    <section class="content" id="functions">
+      <h2>Functions</h2>
+      <p>Functions are reusable blocks of code. They help modularize your program.</p>
+    
+      <img src="program 9" alt="Function call">
+   <img src="output 9" alt="Function call">
+    </section>
 
-int main() {
-    int numbers[5] = {10, 20, 30, 40, 50};
-    for (int i = 0; i &lt; 5; i++) {
-        printf("%d ", numbers[i]);
-    }
-    return 0;
-}
-  </code></pre>
-  <img src="arrays.png" alt="Array Diagram" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content">
-  <h2>Pattern Printing</h2>
-  <p>
-    Pattern problems help understand nested loops. You can print stars, numbers, or characters in shapes like triangles and pyramids.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Triangle pattern
-#include &lt;stdio.h&gt;
-
-int main() {
-    for (int i = 1; i &lt;= 5; i++) {
-        for (int j = 1; j &lt;= i; j++) {
-            printf("* ");
-        }
-        printf("\n");
-    }
-    return 0;
-}
-  </code></pre>
-  <img src="pattern-printing.png" alt="Triangle Output" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content">
-  <h2>Strings in C</h2>
-  <p>
-    Strings are arrays of characters ending with <code>'\0'</code>. C provides various functions for string operations in <code>&lt;string.h&gt;</code>.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: String copy and length
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-
-int main() {
-    char str1[] = "Hello";
-    char str2[20];
-    strcpy(str2, str1);
-    printf("Copied: %s\n", str2);
-    printf("Length: %lu\n", strlen(str2));
-    return 0;
-}
-  </code></pre>
-  <img src="strings.png" alt="String Functions" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content">
-  <h2>Functions</h2>
-  <p>
-    Functions help break code into reusable blocks. You define them once and call them multiple times.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Simple function
-#include &lt;stdio.h&gt;
-
-void greet() {
-    printf("Welcome to C programming!\n");
-}
-
-int main() {
-    greet();
-    greet();
-    return 0;
-}
-  </code></pre>
-  <img src="functions.png" alt="Function Illustration" style="max-width: 100%; margin-top: 10px;">
-</section>
-<section class="content" id="recursion">
-  <h2>Recursion</h2>
-  <p>
-    A recursive function is one that calls itself. Useful for problems like factorial, Fibonacci, and tree traversal.
-  </p>
-  <h3>CODE:</h3>
-  <pre><code>
-// Program: Factorial using recursion
-#include &lt;stdio.h&gt;
-
-int factorial(int n) {
-    if (n == 0) return 1;
-    return n * factorial(n - 1);
-}
-
-int main() {
-    int num = 5;
-    printf("Factorial of %d is %d\n", num, factorial(num));
-    return 0;
-}
-  </code></pre>
-  <img src="recursion.png" alt="Recursion Tree" style="max-width: 100%; margin-top: 10px;">
-</section>
-
-
-
-  </main>
+    <section class="content" id="recursion">
+      <h2>Recursion</h2>
+      <p>Recursion is when a function calls itself. Great for factorial, Fibonacci, and tree problems.</p>
+     
+      <img src="program 10.jpg" alt="Recursive process">
+ <img src="output 10.jpg" alt="Recursive process">
+    </section>
+  </div>
 </body>
 </html>
+
