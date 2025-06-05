@@ -26,22 +26,120 @@
       </ul>
     </aside>
 
-    <section class="content">
-      <h2>Preprocessor Directives</h2>
-      <p>Preprocessor directives in C are commands that begin with <code>#</code> and are processed before compilation...</p>
-      <h3>CODE:</h3>
-      <pre><code>
-// Program 11: Preprocessor Directives
+   <section class="content">
+  <h2>Preprocessor Directives</h2>
+  <p>
+    Preprocessor directives begin with <code>#</code> and are processed before compilation. 
+    Common ones include <code>#include</code> for including libraries and <code>#define</code> for constants or macros.
+  </p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Using #define
 #include &lt;stdio.h&gt;
-#define DEBUG 1
+#define PI 3.14
+
 int main() {
-    #ifdef DEBUG
-        printf("Debug mode is enabled.\\n");
-    #endif
+    float radius = 5.0;
+    float area = PI * radius * radius;
+    printf("Area: %.2f\n", area);
     return 0;
 }
-      </code></pre>
-    </section>
+  </code></pre>
+  <img src="preprocessor.png" alt="Preprocessor illustration" style="max-width: 100%; margin-top: 10px;">
+</section>
+
+<section class="content">
+  <h2>Loops in C</h2>
+  <p>Loops allow repeated execution of code blocks. C supports <code>for</code>, <code>while</code>, and <code>do-while</code>.</p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Print numbers 1 to 5 using for loop
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+  </code></pre>
+</section>
+<section class="content">
+  <h2>Formatted I/O Functions</h2>
+  <p>Formatted input/output functions like <code>scanf</code> and <code>printf</code> allow you to take user input and display output with format specifiers.</p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Formatted I/O
+#include &lt;stdio.h&gt;
+
+int main() {
+    int age;
+    float height;
+    printf("Enter your age and height: ");
+    scanf("%d %f", &amp;age, &amp;height);
+    printf("Age: %d, Height: %.2f\n", age, height);
+    return 0;
+}
+  </code></pre>
+</section>
+<section class="content">
+  <h2>Control Flow</h2>
+  <p>Control flow in C determines the order in which statements are executed. It includes if-else, loops, and switch-case structures.</p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Simple if-else example
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 10;
+    if (num &gt; 0)
+        printf("Positive number\n");
+    else
+        printf("Non-positive number\n");
+    return 0;
+}
+  </code></pre>
+</section>
+<section class="content">
+  <h2>Pattern Printing</h2>
+  <p>Patterns are printed using nested loops. Common examples include triangles, squares, and pyramids of characters or numbers.</p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Right-angled triangle pattern
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 1; i &lt;= 5; i++) {
+        for (int j = 1; j &lt;= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+  </code></pre>
+</section>
+<section class="content">
+  <h2>String Handling Functions</h2>
+  <p>C provides functions like <code>strlen</code>, <code>strcpy</code>, and <code>strcmp</code> to handle strings.</p>
+  <h3>CODE:</h3>
+  <pre><code>
+// Program: Using strlen and strcpy
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[] = "Hello";
+    char str2[20];
+    strcpy(str2, str1);
+    printf("Copied string: %s\n", str2);
+    printf("Length: %lu\n", strlen(str2));
+    return 0;
+}
+  </code></pre>
+</section>
+
+
   </main>
 </body>
 </html>
